@@ -3,20 +3,6 @@ import time
 from random import randrange, sample
 
 
-def create_index_entry_for(filename):
-    position = 0
-    index_entry = {}
-    with open(filename) as file:
-        lines = file.readlines()
-        for line in lines:
-            for token in line.split():
-                if token not in index_entry:
-                    index_entry[token] = []
-                index_entry[token].append(position)
-                position = position + 1
-    return index_entry
-
-
 def create_random_dict_of_lists(sleep):
     random_dict = {}
     num_elements = randrange(10)
